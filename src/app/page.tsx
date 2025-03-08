@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-8 py-4">
       <section className="text-center md:text-left">
-        {/* heading for homepage */}
+        {/* heading for my homepage */}
         <h1 className="text-4xl font-bold tracking-tight mb-4">
           Find the Right Lawyer<br />
           For Your Legal Needs
