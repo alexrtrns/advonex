@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, Scale, Briefcase, Building2, Users2 } from "lucide-react";
+import Link from "next/link"; // Add this import
 
 export default function Home() {
   const practiceAreas = [
@@ -22,10 +23,10 @@ export default function Home() {
           Connect with qualified legal professionals across various practice areas
         </p>
         <Button size="lg" asChild>
-          <a href="/search" className="gap-2">
+          <Link href="/search" className="gap-2">
             <Search className="h-4 w-4" />
             Search Lawyers
-          </a>
+          </Link>
         </Button>
       </section>
 

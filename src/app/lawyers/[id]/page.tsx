@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Mail, Phone, Calendar, Star, MessageSquare, ExternalLink, Briefcase, GraduationCap } from "lucide-react";
+import Link from "next/link";
 
 type LawyerProfile = {
   id: string;
