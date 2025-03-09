@@ -1,5 +1,5 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -24,17 +24,17 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">         
             <ThemeToggle />
-            <Button variant="outline" asChild>
-              <Link href="/login">Sign In </Link>
-            </Button>
             <Button asChild>
-              <Link href="/register">Register</Link>
+              <Link href="/register">Sign In</Link>
             </Button>
           </div>
-
+          <Button variant="outline" asChild>
+              <Link href="/for-lawyers" className="flex items-center gap-2">
+                <span>I'm a Lawyer</span>
+              </Link>
+          </Button>
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -42,12 +42,19 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <SheetTitle className="text-xl font-bold mb-4 px-4 py-4">Hola</SheetTitle>
+              <SheetTitle className="text-xl font-bold mb-4 px-4 py-4">Menu</SheetTitle>
               <nav className="flex flex-col gap-4">
-                <Link href="/search" className="px-4 py-2">Find Lawyers</Link>
-                <Link href="/practice-areas" className="px-4 py-2">Practice Areas</Link>
-                <Link href="/login" className="px-4 py-2">Sign In</Link>
-                <Link href="/register" className="px-4 py-2">Register</Link>
+                <SheetClose asChild>
+                  <Link href="/search" className="px-4 py-2">Find Lawyers</Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link href="/practice-areas" className="px-4 py-2">Practice Areas</Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button asChild>
+                    <Link href="/register">Sign In</Link>
+                  </Button>
+                </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
