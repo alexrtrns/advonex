@@ -162,7 +162,7 @@ export default function LawyerProfile() {
     <div className="space-y-8">
       {/* Hero Section */}
       <div className="flex flex-col gap-6 md:flex-row md:items-start">
-        <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-lg md:w-1/3">
+        <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-lg md:w-1/4">
           <img
             src={mockLawyerProfile.photo}
             alt={mockLawyerProfile.name}

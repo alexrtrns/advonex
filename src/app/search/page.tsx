@@ -106,42 +106,42 @@ export default function LawyersDirectory() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {mockLawyers.map((lawyer) => (
-          <Card key={lawyer.id} className="overflow-hidden">
+          <Card key={lawyer.id} className="p-0 overflow-hidden">
             <Link href={`/lawyers/${lawyer.id}`} className="block">
-              <CardContent className="p-0">
-              <div className="aspect-square relative overflow-hidden group">
-                <img
-                  src={lawyer.photo}
-                  alt={lawyer.name}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-4 space-y-2">
-                <h3 className="font-semibold text-lg">{lawyer.name}</h3>
-                <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4" />
-                  {lawyer.location}
+              <CardContent className="p-0 flex">
+                <div className="w-1/3 aspect-square relative overflow-hidden group">
+                  <img
+                    src={lawyer.photo}
+                    alt={lawyer.name}
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {lawyer.practiceAreas.map((area) => (
-                    <span
-                      key={area}
-                      className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
-                    >
-                      {area}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center justify-between pt-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium">{lawyer.rating}/5.0</span>
-                    <span className="text-sm text-muted-foreground">({lawyer.reviewCount} reviews)</span>
+                <div className="flex-1 p-4 space-y-2">
+                  <h3 className="font-semibold text-lg">{lawyer.name}</h3>
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <MapPin className="h-4 w-4" />
+                    {lawyer.location}
                   </div>
-                  <span className="text-sm text-muted-foreground">{lawyer.experience} years exp.</span>
+                  <div className="flex flex-wrap gap-2">
+                    {lawyer.practiceAreas.map((area) => (
+                      <span
+                        key={area}
+                        className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between pt-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium">{lawyer.rating}/5.0</span>
+                      <span className="text-sm text-muted-foreground">({lawyer.reviewCount} reviews)</span>
+                    </div>
+                    <span className="text-sm text-muted-foreground">{lawyer.experience} years exp.</span>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
+              </CardContent>
             </Link>
           </Card>
         ))}
