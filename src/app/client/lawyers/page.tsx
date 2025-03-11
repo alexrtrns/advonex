@@ -1,8 +1,11 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, MapPin, Filter } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type Lawyer = {
   id: string;
@@ -79,6 +82,29 @@ const mockLawyers: Lawyer[] = [
 ];
 
 export default function LawyersDirectory() {
+
+const [lawyers, setLawyers] = useState<Lawyer[]>([]);
+// const [searchTerm, setSearchTerm] = useState('');
+// const [location, setLocation] = useState('');
+
+useEffect(() => {
+  // Simulate API call delay
+  const fetchLawyers = async () => {
+    try {
+      // Simulating network delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setLawyers(mockLawyers);
+    } catch (error) {
+      console.error('Error fetching lawyers:', error);
+      // Handle error state if needed
+    }
+  };
+
+  fetchLawyers();
+}, []); // Empty dependency array means this effect runs once on mount
+
+
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -105,9 +131,9 @@ export default function LawyersDirectory() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {mockLawyers.map((lawyer) => (
+        {lawyers.map((lawyer) => (
           <Card key={lawyer.id} className="p-0 overflow-hidden">
-            <Link href={`/lawyers/${lawyer.id}`} className="block">
+            <Link href={`/client/lawyers/${lawyer.id}`} className="block">
               <CardContent className="p-0 flex">
                 <div className="w-1/3 aspect-square relative overflow-hidden group">
                   <img

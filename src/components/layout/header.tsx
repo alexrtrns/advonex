@@ -14,10 +14,10 @@ export function Header() {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/search" className="px-4 py-2">Find Lawyers</Link>
+                <Link href="/client/lawyers" className="px-4 py-2">Find Lawyers</Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/practice-areas" className="px-4 py-2">Practice Areas</Link>
+                <Link href="#" className="px-4 py-2">Practice Areas</Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -27,11 +27,11 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">         
             <ThemeToggle />
             <Button asChild>
-              <Link href="/register">Sign In</Link>
+              <Link href="#">Sign In</Link>
             </Button>
           </div>
           <Button variant="outline" asChild>
-              <Link href="/for-lawyers" className="flex items-center gap-2">
+              <Link href="/lawyer" className="flex items-center gap-2">
                 <span>I'm a Lawyer</span>
               </Link>
           </Button>
@@ -45,14 +45,14 @@ export function Header() {
               <SheetTitle className="text-xl font-bold mb-4 px-4 py-4">Menu</SheetTitle>
               <nav className="flex flex-col gap-4">
                 <SheetClose asChild>
-                  <Link href="/search" className="px-4 py-2">Find Lawyers</Link>
+                  <Link href="/client/lawyers" className="px-4 py-2">Find Lawyers</Link>
                 </SheetClose>
                 <SheetClose asChild>
-                  <Link href="/practice-areas" className="px-4 py-2">Practice Areas</Link>
+                  <Link href="#" className="px-4 py-2">Practice Areas</Link>
                 </SheetClose>
                 <SheetClose asChild>
                   <Button asChild>
-                    <Link href="/register">Sign In</Link>
+                    <Link href="#">Sign In</Link>
                   </Button>
                 </SheetClose>
               </nav>
